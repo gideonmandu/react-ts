@@ -11,15 +11,15 @@ interface Props {
 }
 
 const List: FC<Props> = ({ todoList }) => {
-        useEffect(() => {
-        console.log("Rendering <List />")
+    useEffect(() => {
+        // console.log("Rendering <List />")
     })
     return (
-    <ul>
-        {todoList.map((todo: Todo) => (
-            <Task key={todo.id} id={todo.id} task={todo.task} />
-        ))}
-    </ul>
+        <ul>
+            {todoList.map((todo: Todo) => (
+                <Task key={todo.id} id={todo.id} task={todo.task} />
+            ))}
+        </ul>
     )
 }
 
