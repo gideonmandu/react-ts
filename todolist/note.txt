@@ -1,0 +1,13 @@
+memo :
+Memorizes a component
+Re-memorizes when props change
+Avoids re-renders
+useMemo :
+Memorizes a calculated value
+For computed properties
+For heavy processes
+useCallback :
+Memorizes a function definition to avoid redefining it on each render.
+Use it whenever a function is passed as an effect argument.
+Use it whenever a function is passed by props to a memorized component.
+And finally, do not forget the golden rule: Do not use them until absolutely necessary.
