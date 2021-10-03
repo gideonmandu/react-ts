@@ -1,20 +1,20 @@
-import { FC, useEffect, memo } from "react"
-import Task from "./Task"
+import { FC, useEffect, memo } from "react";
+import Task from "./Task";
 
 export type Todo = {
-    id: number,
-    task: string
-}
+    id: number;
+    task: string;
+};
 
 interface Props {
-    todoList: Todo[],
-    handleDelete: any
+    todoList: Todo[];
+    handleDelete: any;
 }
 
 const List: FC<Props> = ({ todoList, handleDelete }) => {
     useEffect(() => {
         // console.log("Rendering <List />")
-    })
+    });
     return (
         <ul>
             {todoList.map((todo: Todo) => (
@@ -26,7 +26,7 @@ const List: FC<Props> = ({ todoList, handleDelete }) => {
                 />
             ))}
         </ul>
-    )
-}
+    );
+};
 
-export default memo(List)
+export default memo(List);
