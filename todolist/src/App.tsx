@@ -28,6 +28,11 @@ const App = () => {
         setTerm(task)
     }
 
+    const handleDelete = useCallback((taskId: number) => {
+        const newTodoList = todoList.filter((todo: Todo) => todo.id !== taskId)
+        setTodoList(newTodoList)
+    }, [todoList])
+
     const filteredTodoList = useMemo(() => todoList.filter((todo: Todo) => {
         console.log("Filtering...")
         return todo.task.toLowerCase().includes(term.toLocaleLowerCase())
@@ -44,7 +49,7 @@ const App = () => {
             />
             <button onClick={handleCreate}>Create</button>
             <button onClick={handleSearch}>Search</button>
-            <List todoList={filteredTodoList} />
+            <List todoList={filteredTodoList} handleDelete={handleDelete} />
         </>
     )
 }
